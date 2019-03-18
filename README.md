@@ -3,6 +3,7 @@
 ## Concept
 
 Before starting this project I went to look for inspirations in Victoria and Albert Museum - Video Game Exhibiton. There were several games presented and all of them shared similar objectives: collecting items, killing or avoiding enemies and reaching destination. I have decided to build a game that will implement those 3 functionalities () using basic games objects.
+![](test.gif)
 
 ## Requirements
 
