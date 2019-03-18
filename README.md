@@ -53,13 +53,13 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 |   |Nav mesh agent|Added humanoidto navigate the enemy|   |
 |   |Script|Implemented enemy behaviour|Using online resources, official Unity docs, youtube videos and the unity handbook|
 |   |Light|Added red point light |Lava effect|
-|   |Texture|Lava pattern|   |
+|   |Texture|Lava pattern|Downloaded from assets store|
 |Capsule collectable |Transform|Set up the starting position|   |
 |   |Mesh filter|   |   |
 |   |Mesh renderer|   |   |
 |   |Capsule collider|   |   |
 |   |Halo|Added to imitate halo effect|   |
-|   |Texture|Grass texture|   |
+|   |Texture|Grass texture|Downloaded form assets store|
 |Destination|Transform|Set up the starting position|   |
 |   |Mesh filter|   |   |
 |   |Mesh renderer|Deactivated|   |
@@ -69,13 +69,13 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 |   |Mesh filter|   |   |
 |   |Mesh renderer|   |   |
 |   |Mesh collider|   |   |
-|   |Texture|Grass pattern|   |
+|   |Texture|Grass pattern|Downloaded from assets store|
 |Plane|Transform|Set up the starting position|In size bigger than floor and the position is underneath the floor|
 |   |Mesh filter|   |   |
 |   |Mesh renderer|Deactivated|   |
 |   |Mesh collider|   |Player is respawned to the starting position if the collision is detected|
 |Main Camera|Transform|Set up the starting position|   |
-|   |Camera|Added skybox and background|   |
+|   |Camera|Added skybox and background|Downloaded from assets store|
 |   |Audio listener|   |   |
 |   |Script|Added camera behaviour|Follow and look at the player object|
 |Directional light|Transform|   |   |
@@ -86,5 +86,13 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 |   |WinMessage|Added to display game state (playing, win, game over)|   |
 |   |Points|Added to display the number of points|Incresed by 1 with every collectable capsule collected|
 
+## Evaluation
+
+In the first attempt to build the project I was trying to implement the game using multiple assets from the Assets store that would include sounds, animation, etc. After spending several hours working with this Assets without implementing funcionalities in C# I have decided to build a prototype with basic game objects that can be easily replaced with actual assets and I focused on building behaviours. I was working with official unity documentation, and unity tutorials available on https://unity3d.com/learn and http://docs.unity3d.com. I have used pluralsight C# courses to expand my understanding and use of the language. In PlayerBehaviour there are 3 public variables: speed, countText, winMessage. In Awake() variables movement, playerRigidbody and startingPosition are initialised. Collision detection is implemented in OnTriggerEnter(Collider other) and depending on the trigger different functions are performed. I was inspired by the existing game Survival Shooter and I have used movement methods Move(h, v) and Turning() to be called in FixedUpdate() method. CameraBehaviour has 2
+
+
+## Personal statement
+
+I can confirm that the work is my own. I have used official unity documentation, tutorials available on Unity website, unity game development handbook and pluralsight tutorials. I have downloaded several assets from Assets store.
 
 
