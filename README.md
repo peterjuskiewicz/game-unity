@@ -38,10 +38,53 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 
 |Object|Component|My Activity|Comments|
 |---|---|---|---|
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
-
+|Player (cube)|Transform|Set up the starting position|   |
+|   |Mesh filter|   |   |
+|   |Mesh renderer|   |   |
+|   |Box collider|   |   |
+|   |Script|Implemented player behaviour|Using online resources, official Unity docs, youtube videos and the unity handbook
+|   |Rigidbody|Added, using gravity|   |
+|   |Light|Added spot light|Flashlight effect|
+|   |Texture|Added grass texture|Downloaded from assets store|
+|Enemy (sphere)|Transform|Set up the starting position|   |
+|   |Mesh filter|   |   |
+|   |Mesh renderer|   |   |
+|   |Sphere collider|   |   |
+|   |Nav mesh agent|Added humanoidto navigate the enemy|   |
+|   |Script|Implemented enemy behaviour|Using online resources, official Unity docs, youtube videos and the unity handbook|
+|   |Light|Added red point light |Lava effect|
+|   |Texture|Lava pattern|   |
+|Capsule collectable |Transform|Set up the starting position|   |
+|   |Mesh filter|   |   |
+|   |Mesh renderer|   |   |
+|   |Capsule collider|   |   |
+|   |Halo|Added to imitate halo effect|   |
+|   |Texture|Grass texture|   |
+|Destination|Transform|Set up the starting position|   |
+|   |Mesh filter|   |   |
+|   |Mesh renderer|Deactivated|   |
+|   |Sphere collider|   |   |
+|   |Spot light|Used to mark the destination|   |
+|Floor|Transform|Set up the starting position||
+|   |Mesh filter|   |   |
+|   |Mesh renderer|   |   |
+|   |Mesh collider|   |   |
+|   |Texture|Grass pattern|   |
+|Plane|Transform|Set up the starting position|In size bigger than floor and the position is underneath the floor|
+|   |Mesh filter|   |   |
+|   |Mesh renderer|Deactivated|   |
+|   |Mesh collider|   |Player is respawned to the starting position if the collision is detected|
+|Main Camera|Transform|Set up the starting position|   |
+|   |Camera|Added skybox and background|   |
+|   |Audio listener|   |   |
+|   |Script|Added camera behaviour|Follow and look at the player object|
+|Directional light|Transform|   |   |
+|   |Light|Change intensity and colour|   |
+|Canvas|Rect transform|   |   |
+|   |Canvas|   |   |
+|   |Script|Canvas scaler, Graphic raycaster|   |
+|   |WinMessage|Added to display game state (playing, win, game over)|   |
+|   |Points|Added to display the number of points|Incresed by 1 with every collectable capsule collected|
 
 
 
