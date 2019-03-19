@@ -2,7 +2,7 @@
 
 ## Concept
 
-Before starting this project I went to look for inspirations in Victoria and Albert Museum - Video Game Exhibiton. There were several games presented and all of them shared similar objectives: collecting items, killing or avoiding enemies and reaching destination. I have decided to build a game that will implement those 3 functionalities () using basic games objects.
+Victoria and Albert Museum hosted Video Game Exhibiton and that was the inspiration for me to build this game prototype. There were several games presented and all of them shared similar objectives: collecting items, killing or avoiding enemies and reaching destination. I have decided to build a game that will implement those 3 functionalities () using basic games objects. Below there are images showing the concept of the game.
 ![](test.gif)
 
 ## Requirements
@@ -28,6 +28,14 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 5. Floor plane with grass texture, being walkable navigation area
 6. Main camera following the player
 7. Dimmed directional light
+
+## Analysis and design
+
+The game will have a simple logic: player collecting items and trying to avoid enemies. The main goal of the player is to collect the highest number of collectable items and reach the destination where the game ends and the player wins. If the player is touched by an enemy the game. I also set up respawning in case the player object falls of the floor plane.
+
+![](diagram1.png)
+
+![](diagram2.png)
 
 ## Implementation
 
