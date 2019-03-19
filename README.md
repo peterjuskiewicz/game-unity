@@ -3,6 +3,7 @@
 ## Concept
 
 Victoria and Albert Museum hosted Video Game Exhibiton and that was the inspiration for me to build this game prototype. There were several games presented and all of them shared similar objectives: collecting items, killing or avoiding enemies and reaching destination. I have decided to build a game that will implement those 3 functionalities () using basic games objects. Below there are images showing the concept of the game.
+
 ![](test.gif)
 
 ## Requirements
@@ -31,7 +32,7 @@ In this game projects only basic game objects are used: spheres, planes, cubes a
 
 ## Analysis and design
 
-The game will have a simple logic: player collecting items and trying to avoid enemies. The main goal of the player is to collect the highest number of collectable items and reach the destination where the game ends and the player wins. If the player is touched by an enemy the game. I also set up respawning in case the player object falls of the floor plane.
+The game will have a simple logic: player collecting items and trying to avoid enemies. The main goal of the player is to collect the highest number of collectable items and reach the destination where the game ends and the player wins. If the player is touched by an enemy the game is over. I also set up respawning in case the player object falls of the floor plane.
 
 ![](diagram1.png)
 
@@ -94,10 +95,22 @@ The game will have a simple logic: player collecting items and trying to avoid e
 |   |Script|Canvas scaler, Graphic raycaster|   |
 |   |WinMessage|Added to display game state (playing, win, game over)|   |
 |   |Points|Added to display the number of points|Incresed by 1 with every collectable capsule collected|
+|StartGameButton|Rect Transform|Set up starting position|   |
+|   |Canvas renderer|   |   |
+|   |Image|Changed the colour|Deactivated when the button is clicked|
+|   |Script|Implemented onClick callback|Deactivates the image and sets the isPlaying to true|
 
 ## Evaluation
 
-In the first attempt to build the project I was trying to implement the game using multiple assets from the Assets store that would include sounds, animation, etc. After spending several hours working with this Assets without implementing funcionalities in C# I have decided to build a prototype with basic game objects that can be easily replaced with actual assets and I focused on building behaviours. I was working with official unity documentation, and unity tutorials available on https://unity3d.com/learn and http://docs.unity3d.com. I have used pluralsight C# courses to expand my understanding and use of the language. In PlayerBehaviour there are 3 public variables: speed, countText, winMessage. In Awake() variables movement, playerRigidbody and startingPosition are initialised. Collision detection is implemented in OnTriggerEnter(Collider other) and depending on the trigger different functions are performed. I was inspired by the existing game Survival Shooter and I have used movement methods Move(h, v) and Turning() to be called in FixedUpdate() method. CameraBehaviour has 2
+In the first attempt to build the project I was trying to implement the game using multiple assets from the Assets store that would include sounds, animation, etc. After spending several hours working with this Assets without implementing funcionalities in C# I have decided to build a prototype with basic game objects that can be easily replaced with actual assets and I focused on building behaviours. I was working with official unity documentation, and unity tutorials available on https://unity3d.com/learn and http://docs.unity3d.com. I have used pluralsight C# courses to expand my understanding and use of the language. In PlayerBehaviour there are 3 public variables: speed, countText, winMessage. In Awake() variables movement, playerRigidbody, buttonImage and startingPosition are initialised and the callback for the button.onClick is added.  Collision detection is implemented in OnTriggerEnter(Collider other) and depending on the trigger different functions are performed.
+
+There are 4 collision cases:
+1. Player touches the enemy and the message Game over is displayed
+2. Player collects the items and the score is increased
+3. Player falls of the floor and is respawn to the starting position
+4. Player reaches the destination and the message Win is displayed
+
+I have used movement methods Move(h, v) and Turning() to be called in FixedUpdate() method. CameraBehaviour implements follow the player fuctionality. The main problem with this behaviour was to ensure that the camera will always look at the player, hence I added lookAt() build in method. In EnemyBehaviour on Awake() references to NavMeshAgent and Player are initialised and on Update() the destination of NavMeshAgent is set to the player current position such as the enemy can follow the player.
 
 
 ## Personal statement
