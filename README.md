@@ -102,7 +102,9 @@ The game will have a simple logic: player collecting items and trying to avoid e
 
 ## Evaluation
 
-In the first attempt to build the project I was trying to implement the game using multiple assets from the Assets store that would include sounds, animation, etc. After spending several hours working with this Assets without implementing funcionalities in C# I have decided to build a prototype with basic game objects that can be easily replaced with actual assets and I focused on building behaviours. I was working with official unity documentation, and unity tutorials available on https://unity3d.com/learn and http://docs.unity3d.com. I have used pluralsight C# courses to expand my understanding and use of the language. In PlayerBehaviour there are 3 public variables: speed, countText, winMessage. In Awake() variables movement, playerRigidbody, buttonImage and startingPosition are initialised and the callback for the button.onClick is added.  Collision detection is implemented in OnTriggerEnter(Collider other) and depending on the trigger different functions are performed.
+In the first attempt to build the project I was trying to implement the game using multiple assets from the Assets store that would include sounds, animation, etc. After spending several hours working with this Assets without implementing funcionalities in C# I have decided to build a prototype with basic game objects that can be easily replaced with actual assets and I focused on building behaviours. I was working with official unity documentation, and unity tutorials available on https://unity3d.com/learn and http://docs.unity3d.com. I have used pluralsight C# courses to expand my understanding and use of the language.
+
+In PlayerBehaviour on Awake() the references to movement, playerRigidbody, buttonImage and startingPosition are initialized and the callback for the button.onClick is added.  Collision detection is implemented in OnTriggerEnter(Collider other) and depending on the trigger different functions are performed.
 
 There are 4 collision cases:
 1. Player touches the enemy and the message Game over is displayed
@@ -110,7 +112,11 @@ There are 4 collision cases:
 3. Player falls of the floor and is respawn to the starting position
 4. Player reaches the destination and the message Win is displayed
 
-I have used movement methods Move(h, v) and Turning() to be called in FixedUpdate() method. CameraBehaviour implements follow the player fuctionality. The main problem with this behaviour was to ensure that the camera will always look at the player, hence I added lookAt() build in method. In EnemyBehaviour on Awake() references to NavMeshAgent and Player are initialised and on Update() the destination of NavMeshAgent is set to the player current position such as the enemy can follow the player.
+I have used movement methods Move(h, v) and Turning() to be called in FixedUpdate() method.
+
+In CameraBehaviour on Start() variables angle and offset are calculated and initialized. It implements follow the player fuctionality and on FixedUpdate setting the camera position with the offset relatively to the current position of the player. It also enables the player to use the mouse for rotation. The main problem with this behaviour was to ensure that the camera will always look at the player, hence I added LookAt() build in method.
+
+In EnemyBehaviour on Awake() references to NavMeshAgent and Player are initialized and on Update() the destination of NavMeshAgent is set to the player current position such as the enemy can follow the player.
 
 
 ## Personal statement
