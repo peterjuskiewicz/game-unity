@@ -4,7 +4,7 @@
 
 Victoria and Albert Museum hosted Video Game Exhibiton and that was the inspiration for me to build this game prototype. There were several games presented and all of them shared similar objectives: collecting items, killing or avoiding enemies and reaching destination. I have decided to build a game that will implement those 3 functionalities () using basic games objects. Below there are images showing the concept of the game.
 
-![](test.gif)
+![](concept.jpeg)
 
 ## Requirements
 
